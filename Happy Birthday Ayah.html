@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Ayah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      height: 100%;
+      overflow: hidden;
+      background: url('https://images.unsplash.com/photo-1472537581325-b8bcf5b4c52e') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #fdf6f0;
+    }
+
+    .overlay {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .container {
+      max-width: 720px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #d23669;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #c2185b;
+      font-weight: bold;
+    }
+
+    .music-controls {
+      margin-top: 25px;
+    }
+
+    .pause-btn, .play-btn {
+      background-color: #d23669;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .pause-btn:hover, .play-btn:hover {
+      background-color: #a72c5f;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Happy Birthday Ayah 🎉</h1>
+      <p>
+        Assalamualaikum Ayah,<br><br>
+        Sorry abang jauh tak dapat jumpa ayah sekarang, abang cuma nak cakap 
+        <span class="highlight">thank you for always being my hero</span> and my best friend.<br><br>
+        <span class="highlight">Thank you for always guiding me</span> whenever I'm lost.<br><br>
+        Thank you for giving me <span class="highlight">all the love and attention</span> all this time.<br><br>
+        Thank you Ayah for being <span class="highlight">the best father I could have asked for</span>.<br><br>
+        Abang harap hadiah ni boleh bagi senyuman dekat muka ayah dengan ceriakan hari ayah.<br><br>
+        <span class="highlight">I can't thank you enough</span> for all the things you’ve done for me.<br><br>
+        <span class="highlight">I love you so much ayah thank you for always being with me 💖</span>
+      </p>
+
+      <div class="music-controls">
+        <audio id="birthday-music" loop>
+          <source src="https://www.bensound.com/bensound-music/bensound-memories.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <button class="pause-btn" id="pause-btn" onclick="pauseMusic()">Pause Music</button>
+        <button class="play-btn" id="play-btn" onclick="playMusic()" style="display: none;">Play Music</button>
+      </div>
+
+      <div class="footer">
+        With love<br>Shaqeel
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('birthday-music');
+    const pauseBtn = document.getElementById('pause-btn');
+    const playBtn = document.getElementById('play-btn');
+
+    // Start playing music as soon as the page is loaded
+    window.onload = () => {
+      audio.play();
+      pauseBtn.style.display = 'inline-block';
+      playBtn.style.display = 'none';
+    };
+
+    function pauseMusic() {
+      audio.pause();
+      pauseBtn.style.display = 'none';
+      playBtn.style.display = 'inline-block';
+    }
+
+    function playMusic() {
+      audio.play();
+      playBtn.style.display = 'none';
+      pauseBtn.style.display = 'inline-block';
+    }
+  </script>
+</body>
+</html>
